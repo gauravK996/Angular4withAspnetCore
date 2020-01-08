@@ -1,0 +1,79 @@
+﻿
+
+
+
+<form #StdForm="ngForm" (ngSubmit)="Submit(StdForm.value)">
+    <input type="hidden" [(ngModel)]="Id" name="Id" />
+    
+    <input type="text" [(ngModel)]="Name" name="Name" required minlength="10" maxlength="20" #Nname="ngModel"/>
+    <div *ngIf="Nname.invalid && (Nname.dirty || Nname.touched)" >
+        <div *ngIf="Nname.errors.required">
+            <span style="color:red">Name Required</span>
+        </div>
+        <div *ngIf="Nname.errors.minlength">
+            <span style="color:red">Minimum</span>
+        </div>
+        <div *ngIf="Nname.errors.maxlength">
+            <span style="color:red">Maximum</span>
+        </div>
+    </div>
+    <input type="date"[(ngModel)]="CreateDate" name="CreateDate" #CreateBydate="ngModel" required/>
+    <div *ngIf="CreateBydate.invalid && (CreateBydate.dirty ||CreateBydate.touched)">
+        <div *ngIf="CreateBydate.errors.required">
+            <span style="color:red">field Required</span>
+        </div>
+    </div>
+    <input type="number" [(ngModel)]="Age" name="Age"  #Myage="ngModel" required/>
+    <div *ngIf="Myage.invalid &&(Myage.dirty || Myage.touched)">
+        <div *ngIf="Myage.errors.required">
+            <span style="color:red">field Required</span>
+        </div>
+    </div>
+    <select [(ngModel)]="CourseId" name="CourseId" required #Course="ngModel">
+        <option *ngFor="let c of Courses" value="{{c.Id}}">{{c.CourseName}}</option>
+    </select>
+    <div *ngIf="Course.invalid &&(Course.dirty || Course.touched)">
+        <div *ngIf="Course.errors.required">
+            <span style="color:red">field Required</span>
+
+        </div>
+    </div>
+    <input type="submit" value="Submit" [disabled]="!StdForm.form.valid"/>
+</form>
+
+<span dddss></span>
+
+
+<table class="table" >
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>age</th>
+        <th>Create Date</th>
+        <th>Course</th>
+    </tr>
+    <tr *ngFor="let v of Students" (click)="OnUserClick(v)">
+        <td>
+            {{v.Id}}
+        </td>
+        <td>
+            {{v.Name}}
+        </td>
+        <td>{{v.Age}}</td>
+        <td>{{v.CreateDate|date:"MM/dd/yy"}}</td>
+        <td>{{v.CourseId|Coursefilter}}</td>
+
+    </tr>
+</table>
+
+
+
+<div *ngIf="StudentData">
+    <p>{{StudentData.Id}}</p>
+    <p>{{StudentData.Name}}</p>
+</div>
+<div  *ngIf="StudentData">
+    
+    <input type="text" [(ngModel)]="StudentData.Id"  />
+    <input type="text" [(ngModel)]="StudentData.Name" name="Name" />
+</div>

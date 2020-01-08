@@ -1,0 +1,16 @@
+﻿@inject ITagHelperComponentManager mmmm
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<Ancher mail-to="sasasaas"></Ancher>
+<MyScript Asp-button-id="ffff" Asp-button-Name="Sanju" />
+@{
+    mmmm.Components.Add(new TestingTagHelperComponent());
+}
+
+<App></App>
+@*<a [routerLink]="['Home']">Home</a>
+<a [routerLink]="['Course']">Course</a>
+<router-outlet></router-outlet>*@

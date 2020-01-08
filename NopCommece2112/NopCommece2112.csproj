@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\App\Course\Course.component.ts" />
+    <None Remove="ClientApp\App\CustomDirective\Custom.Directive.ts" />
+    <None Remove="ClientApp\App\FilterService\Course.pipe.ts" />
+    <None Remove="ClientApp\App\Home\Home.component.ts" />
+    <None Remove="ClientApp\App\ModelClass\Class.ts" />
+    <None Remove="ClientApp\App\ModelClass\Student.ts" />
+    <None Remove="ClientApp\App\ReactiveForms\Reactiveform.Component.ts" />
+    <None Remove="ClientApp\App\RoutingUser\RoutingUser.Component.ts" />
+    <None Remove="ClientApp\App\Services\Course.Service.ts" />
+    <None Remove="ClientApp\App\Services\Student.Service.ts" />
+    <None Remove="ClientApp\App\WithWebApi\ServiceForApi.ts" />
+    <None Remove="ClientApp\App\WithWebApi\WepApiCustomDirective.ts" />
+    <None Remove="ClientApp\App\WithWebApi\WepApiFiter.ts" />
+    <None Remove="ClientApp\App\WithWebApi\WithApi.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\App\Course\Course.component.ts" />
+    <TypeScriptCompile Include="ClientApp\App\CustomDirective\Custom.Directive.ts" />
+    <TypeScriptCompile Include="ClientApp\App\FilterService\Course.pipe.ts" />
+    <TypeScriptCompile Include="ClientApp\App\Home\Home.component.ts" />
+    <TypeScriptCompile Include="ClientApp\App\ModelClass\Class.ts" />
+    <TypeScriptCompile Include="ClientApp\App\ModelClass\Student.ts" />
+    <TypeScriptCompile Include="ClientApp\App\ReactiveForms\Reactiveform.Component.ts" />
+    <TypeScriptCompile Include="ClientApp\App\RoutingUser\RoutingUser.Component.ts" />
+    <TypeScriptCompile Include="ClientApp\App\Services\Course.Service.ts" />
+    <TypeScriptCompile Include="ClientApp\App\Services\Student.Service.ts" />
+    <TypeScriptCompile Include="ClientApp\App\WithWebApi\ServiceForApi.ts" />
+    <TypeScriptCompile Include="ClientApp\App\WithWebApi\WepApiCustomDirective.ts" />
+    <TypeScriptCompile Include="ClientApp\App\WithWebApi\WepApiFiter.ts" />
+    <TypeScriptCompile Include="ClientApp\App\WithWebApi\WithApi.component.ts" />
+  </ItemGroup>
+
+</Project>

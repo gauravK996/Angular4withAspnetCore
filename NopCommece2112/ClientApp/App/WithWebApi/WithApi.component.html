@@ -1,0 +1,33 @@
+﻿
+
+<form [formGroup]="StudentModelForm" name="ssss" (ngSubmit)="OnPost()">
+    <input type="number" formControlName="Id" name="Id" />
+    <div *ngIf="Id.invalid && (Id.dirty || Id.touched) ">
+        <div *ngIf="Id.errors.required">
+            <span style="color:red">Required</span>
+        </div>
+    </div>
+    <input type="number" formControlName="Name" name="Name">
+    <div *ngIf="Name.invalid && (Name.dirty || Name.touched)">
+        <div *ngIf="Name.errors.required">
+            <span style="color:red">Required</span>
+        </div>
+    </div>
+    <input type="submit" value="SUBMIT" [disabled]="StudentModelForm.invalid" />
+</form>
+
+<a apidirective>my name is</a>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let v of _StudentList">
+        <td>
+            {{v.Id}}
+        </td>
+        <td>
+            {{v.Name|APINAME}}
+        </td>
+    </tr>
+</table>

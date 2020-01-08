@@ -1,0 +1,51 @@
+﻿<br><input type="text" name="name" [formControl]="name" (document:click)="onKeyEnter()" />
+<!--<a (click)="OnClick()">ClickForChange </a>-->
+<a on-click="OnClick()">ClickForChange </a>
+<p>{{name.value}}</p>
+<!--<input type="text" name="name2" [ngModel]="nameg" (ngModelChange)="nameg=$event" >-->
+<input  type="text" bindon-ngModel="nameg" />
+<p>{{nameg}}</p>
+<span [title]="name.value">ssssssssssssssssssssssss</span>
+<span [innerHtml]="name.value"  bind-title="name.value"></span>
+ <div [ngSwitch]="nameg">
+     <div *ngSwitchCase="'sanju'">
+         <h1>Hi {{nameg}}</h1>
+     </div>
+     <div *ngSwitchCase="'Gaurav'">
+         <h1>hi {{nameg}}</h1>
+     </div>
+     <div *ngSwitchDefault>
+         <h1>Default</h1>
+     </div>
+ </div>
+<br />
+<form [formGroup]="MyForm" name="ddd" (ngSubmit)="OnSubmitClick()">
+    <input type="text" formControlName="FirstName" name="FirstName"/>
+    <div *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)">
+        <div *ngIf="FirstName.errors.required">
+            <span style="color:red">Required</span>
+        </div>
+    </div>
+    <input type="text" formControlName="LastName" name="LastName" />
+    <div *ngIf="LastName.invalid &&(LastName.dirty ||LastName.touched)">
+        <div *ngIf="LastName.errors.required">
+            <span style="color:red">Required</span>
+        </div>
+    </div>
+    <div formGroupName="Address">
+        Address
+        <input type="text" formControlName="State" name="State"/>
+        <div *ngIf="State.invalid &&(State.dirty || State.touched)">
+            <div *ngIf="State.errors.required">
+                <span style="color:red">Required</span>
+            </div>   
+        </div>
+        <input type="text"formControlName="City" name="City" />
+        <div *ngIf="City.invalid &&(City.dirty || City.touched)">
+            <div *ngIf="City.errors.required">
+                <span style="color:red">Required</span>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Save" [disabled]="MyForm.invalid"/>
+</form>

@@ -1,0 +1,26 @@
+﻿
+<form #CourseForm="ngForm" (ngSubmit)="CourseSubmit(CourseForm.value)">
+    <input type="hidden"  name="Id"  [(ngModel)]="Id"/>
+    <input type="text" name="CourseName" [(ngModel)]="CourseName" />
+    <input type="submit" />
+    
+</form>
+
+<table>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            courses
+        </th>
+    </tr>
+    <tr *ngFor="let S of courses" >
+        <td>
+            {{S.Id}}
+        </td>
+        <td>
+            {{S.CourseName}}
+        </td>
+    </tr>
+</table>
